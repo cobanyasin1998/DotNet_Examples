@@ -7,15 +7,20 @@ namespace DependencyInjection.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
+        private readonly INumGenerator _numGenerator;
+        public WeatherForecastController(INumGenerator numGenerator)
+        {
+            _numGenerator = numGenerator;
+        }
         
         [HttpGet]
         public String Get()
         {
-            NumGenerator n = new NumGenerator();
+            //NumGenerator n = new NumGenerator();
 
-            int number = n.GetRandomNumber();
+            //int number = n.GetRandomNumber();
 
-            return number.ToString();
+            return _numGenerator.GetRandomNumber().ToString();
         }
     }
 }

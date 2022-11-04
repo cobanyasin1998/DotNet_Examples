@@ -1,9 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace DependencyInjection.Controllers
 {
@@ -11,5 +6,15 @@ namespace DependencyInjection.Controllers
     [ApiController]
     public class TestController : ControllerBase
     {
+        [HttpGet]
+
+        public string Get()
+        {
+            NumGenerator n = new NumGenerator();
+
+            int number = n.GetRandomNumber();
+
+            return number.ToString();
+        }
     }
 }
