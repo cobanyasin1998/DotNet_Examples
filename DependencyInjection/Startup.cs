@@ -28,11 +28,11 @@ namespace DependencyInjection
             services.AddControllers();
 
 
-            services.AddScoped<INumGenerator, NumGenerator>();
-            services.AddSingleton<INumGenerator, NumGenerator>();
-            services.AddTransient<INumGenerator, NumGenerator>();
+            services.AddScoped<INumGenerator, NumGenerator>();//Request bazlý bir kere çalýþtýrýlýr.
+            services.AddSingleton<INumGenerator, NumGenerator>();//Uygulama sürecinde bir kere çalýþtýrýlýr.
+            services.AddTransient<INumGenerator, NumGenerator>();//Her çaðrýldýðýnda çalýþtýrýlýr.Scoped ile farklý scoped'in request bazlý olmasýdýr.
 
-
+            services.AddScoped<INumGenerator2, NumGenerator2>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

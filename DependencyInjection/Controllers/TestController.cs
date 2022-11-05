@@ -12,7 +12,7 @@ namespace DependencyInjection.Controllers
         {
             NumGenerator n = new NumGenerator();
 
-            int number = n.GetRandomNumber();
+            int number = n.RandomValue;
 
             return number.ToString();
         }

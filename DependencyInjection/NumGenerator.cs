@@ -4,16 +4,18 @@ namespace DependencyInjection
 {
     public class NumGenerator :INumGenerator
     {
-        public int GetRandomNumber()
-        {
-           
+        public int RandomValue { get; }
 
-            return new Random().Next(10);
+        public NumGenerator()
+        {
+            RandomValue = new Random().Next(10);
         }
+
+      
        
     }
     public interface INumGenerator
     {
-        public int GetRandomNumber();
+        public int RandomValue { get; }
     }
 }
