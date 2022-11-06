@@ -39,6 +39,8 @@ namespace Middlewares
             app.UseHttpsRedirection();
 
             app.UseMiddleware<ExceptionHandlerMiddleware>();
+            app.UseMiddleware<RequestResponseMiddlewares>();
+
             app.UseRouting();
 
             app.UseAuthorization();
